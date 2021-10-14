@@ -14,9 +14,17 @@ $Ubuntu server :
 	UBUNTU_CODENAME=focal
 $SSH-SERVER Installed defualt
 UFW ALLOW SSH
-Following : https://fabianlee.org/2018/02/08/ubuntu-a-centralized-apt-package-cache-using-squid-deb-proxy/ for cache
+sudo passwd --> Set the ROOT password
+$Following : https://fabianlee.org/2018/02/08/ubuntu-a-centralized-apt-package-cache-using-squid-deb-proxy/ for cache
+sudo ufw allow 8000/tcp  <PORT SQYUID DEB IS GOING TO BE RUN FROM 
+nano squid-db.log  gives us live view of apt requestts
+	cd /var/log/squid-deb-proxy
+ 	tail -f access.log cache.log store.log
+$WhiteListted 
+	Google echo "dl.google.com" | sudo tee -a /etc/squid-deb-proxy/mirror-dstdomain.acl.d/10-default
+	launchpad 
+sudo dpkg-reconfigure locales    # so i has all lan suppport
 
+	
 
----------------------
-sudo apt install mosh
 
