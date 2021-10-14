@@ -47,6 +47,15 @@ sudo apt install build-essential  # required for later exotic setups
 sudo nano /etc/ssh/sshd_config
 	port 8686
 	service ssh reload
+	ufw allow 8686
+Installing ET https://eternalterminal.dev/usermanual/
+	sudo apt-get install -y software-properties-common
+	sudo add-apt-repository ppa:jgmath2000/et
+	sudo apt-get update
+	sudo apt-get install et
+	ufw allow 2022
+	
+
 	
 
 
