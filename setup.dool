@@ -36,7 +36,7 @@ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 	mysqlx-bind-address     = 0.0.0.0
 sudo service mysql force-reload
 sudo ufw allow 3306/tcp
-locater my.cnf
+locate my.cnf
 	nano my.cnf
 		[mysqld]
 		default_authentication_plugin=mysql_native_password
