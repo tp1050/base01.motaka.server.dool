@@ -24,6 +24,28 @@ $WhiteListted
 	Google echo "dl.google.com" | sudo tee -a /etc/squid-deb-proxy/mirror-dstdomain.acl.d/10-default
 	launchpad 
 sudo dpkg-reconfigure locales    # so i has all lan suppport
+sudo apt install nmap whois locate mycli
+#c@baseotaka:/var/log/apt$ cat history.log |grep apt.install  gives you all the installed apts
+sudo apt install mysql-server mysql-client
+
+sudo mysql_secure_installation
+sudo mycli -u root
+	create USER 'c'@'%' IDENTIFIED WITH mysql_native_password BY '22111357'; # So pho and python can interface
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf 
+	bind-address            = 0.0.0.0
+	mysqlx-bind-address     = 0.0.0.0
+sudo service mysql force-reload
+sudo ufw allow 3306/tcp
+locater my.cnf
+	nano my.cnf
+		[mysqld]
+		default_authentication_plugin=mysql_native_password
+
+
+	
+
+
+
 
 	
 
