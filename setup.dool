@@ -56,11 +56,20 @@ Installing ET https://eternalterminal.dev/usermanual/
 	ufw allow 2022
 	on the client SIDE:
 		sudo nano $HOME/.ssh/config  #https://www.cyberciti.biz/faq/create-ssh-config-file-on-linux-unix/
-		Mosh and ET need to know the PORT address for SSH-server only and only through ssh config file or fails
-		Host server1
-		     HostName 192.168.5.17
-		     User c
-		     Port 8686
+		Mosh and ET need to know the PORT address for SSH-server only and only through ssh config file or fails                  
+			Host base01.shatboolan
+			     HostName 192.168.5.17
+			     User c
+			     Port 8686
+			Host base01.shatboolpubD
+			     HostName Bookine.ir
+			     User c
+			     Port 8686  
+			Host base01.shatboolpubI
+			     HostName 84.241.63.0
+			     User c
+			     Port 8686
+
 		     
 
 			
