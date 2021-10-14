@@ -14,6 +14,9 @@ $Ubuntu server :
 	UBUNTU_CODENAME=focal
 $SSH-SERVER Installed defualt
 UFW ALLOW SSH
+Following : https://fabianlee.org/2018/02/08/ubuntu-a-centralized-apt-package-cache-using-squid-deb-proxy/ for cache
 
+
+---------------------
 sudo apt install mosh
 
