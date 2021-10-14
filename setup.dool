@@ -70,6 +70,10 @@ Installing ET https://eternalterminal.dev/usermanual/
 			     User c
 			     Port 8686
 
+
+--------------------
+echo "download.opensuse.org" | sudo tee -a /etc/squid-deb-proxy/mirror-dstdomain.acl.d/10-default
+
 		     
 
 			
