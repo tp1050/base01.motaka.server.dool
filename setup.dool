@@ -44,6 +44,10 @@ locate my.cnf
 
 	
 sudo apt install build-essential  # required for later exotic setups
+sudo nano /etc/ssh/sshd_config
+	port 8686
+	service ssh reload
+	
 
 
 
