@@ -66,7 +66,7 @@ Installing ET https://eternalterminal.dev/usermanual/
 			     Port 8686
 
 
-
+sudo apt install net-tools # this is for famous netstat
 
 
 
