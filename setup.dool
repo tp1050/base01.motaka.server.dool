@@ -72,6 +72,7 @@ Installing ET https://eternalterminal.dev/usermanual/
 			     Port 8686
 
 ---------------------
+squid-deb is massively problematic but team decided to fix it step by step
 sudo nano /etc/squid-deb-proxy/mirror-dstdomain.acl
 	added ppa.launchpad.com brave.com
 sudo nano  /etc/squid-deb-proxy/mirror-dstdomain.acl.d/10-default
