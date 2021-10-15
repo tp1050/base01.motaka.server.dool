@@ -15,18 +15,13 @@ $Ubuntu server :
 $SSH-SERVER Installed defualt
 UFW ALLOW SSH
 sudo passwd --> Set the ROOT password
-$Following : https://fabianlee.org/2018/02/08/ubuntu-a-centralized-apt-package-cache-using-squid-deb-proxy/ for cache
-sudo ufw allow 8000/tcp  <PORT SQYUID DEB IS GOING TO BE RUN FROM 
-nano squid-db.log  gives us live view of apt requestts
-	cd /var/log/squid-deb-proxy
- 	tail -f access.log cache.log store.log
-$WhiteListted 
-	Google echo "dl.google.com" | sudo tee -a /etc/squid-deb-proxy/mirror-dstdomain.acl.d/10-default
-	launchpad 
+## Cancerous code removed %1%
 sudo dpkg-reconfigure locales    # so i has all lan suppport
-apt-get install avahi-discover  # Facilitates Discoveries on Lan
-sudo apt install nmap whois locate mycli
-#c@baseotaka:/var/log/apt$ cat history.log |grep apt.install  gives you all the installed apts
+
+sudo apt install -y software-properties-common
+sudo apt install build-essential
+sudo apt install avahi-discover  # Facilitates Discoveries on Lan
+sudo apt install nmap whois locate mycli mosh
 sudo apt install mysql-server mysql-client
 
 sudo mysql_secure_installation
@@ -44,13 +39,12 @@ locate my.cnf
 
 
 	
-sudo apt install build-essential  # required for later exotic setups
 sudo nano /etc/ssh/sshd_config
 	port 8686
 	service ssh reload
 	ufw allow 8686
 Installing ET https://eternalterminal.dev/usermanual/
-	sudo apt-get install -y software-properties-common
+	
 	sudo add-apt-repository ppa:jgmath2000/et
 	sudo apt-get update
 	sudo apt-get install et
@@ -71,8 +65,30 @@ Installing ET https://eternalterminal.dev/usermanual/
 			     User c
 			     Port 8686
 
----------------------
+
+
+
+
+
+
+
+
+
+
+
+%1% cancer code---------------------
+
+#c@baseotaka:/var/log/apt$ cat history.log |grep apt.install  gives you all the installed apts
+
 squid-deb is massively problematic but team decided to fix it step by step
+##$Following : https://fabianlee.org/2018/02/08/ubuntu-a-centralized-apt-package-cache-using-squid-deb-proxy/ for cache
+##sudo ufw allow 8000/tcp  <PORT SQYUID DEB IS GOING TO BE RUN FROM 
+##nano squid-db.log  gives us live view of apt requestts
+##	cd /var/log/squid-deb-proxy
+##	tail -f access.log cache.log store.log
+##$WhiteListted 
+##	Google echo "dl.google.com" | sudo tee -a /etc/squid-deb-proxy/mirror-dstdomain.acl.d/10-default
+##	launchpad 
 sudo nano /etc/squid-deb-proxy/mirror-dstdomain.acl
 	added ppa.launchpad.com brave.com
 sudo nano  /etc/squid-deb-proxy/mirror-dstdomain.acl.d/10-default
@@ -88,6 +104,11 @@ sudo nano /etc/squid-deb-proxy/squid-deb-proxy.conf
 	cache deny !to_archive_mirrors
 	cache allow !to_archive_mirrors
 echo "download.opensuse.org" | sudo tee -a /etc/squid-deb-proxy/mirror-dstdomain.acl.d/10-default
+
+sudo nano sources.list
+	uncomment:
+	deb http://archive.canonical.com/ubuntu focal partner
+	deb-src http://archive.canonical.com/ubuntu focal partner
 
 --------------------
 
