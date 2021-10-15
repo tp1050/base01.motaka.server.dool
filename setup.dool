@@ -24,6 +24,7 @@ $WhiteListted
 	Google echo "dl.google.com" | sudo tee -a /etc/squid-deb-proxy/mirror-dstdomain.acl.d/10-default
 	launchpad 
 sudo dpkg-reconfigure locales    # so i has all lan suppport
+apt-get install avahi-discover  # Facilitates Discoveries on Lan
 sudo apt install nmap whois locate mycli
 #c@baseotaka:/var/log/apt$ cat history.log |grep apt.install  gives you all the installed apts
 sudo apt install mysql-server mysql-client
@@ -69,7 +70,10 @@ Installing ET https://eternalterminal.dev/usermanual/
 			     HostName 84.241.63.0
 			     User c
 			     Port 8686
+
 ---------------------
+sudo nano /etc/squid-deb-proxy/mirror-dstdomain.acl
+	added ppa.launchpad.com brave.com
 sudo nano  /etc/squid-deb-proxy/mirror-dstdomain.acl.d/10-default
 	Added domains like dl.google
 
@@ -82,10 +86,12 @@ sudo nano /etc/squid-deb-proxy/squid-deb-proxy.conf
 	# uncomment the third and fourth line to cache any unlisted domains
 	cache deny !to_archive_mirrors
 	cache allow !to_archive_mirrors
-
+echo "download.opensuse.org" | sudo tee -a /etc/squid-deb-proxy/mirror-dstdomain.acl.d/10-default
 
 --------------------
-echo "download.opensuse.org" | sudo tee -a /etc/squid-deb-proxy/mirror-dstdomain.acl.d/10-default
+
+
+
 
 		     
 
