@@ -67,6 +67,8 @@ Installing ET https://eternalterminal.dev/usermanual/
 
 
 sudo apt install net-tools # this is for famous netstat
+sudo apt install idutils
+sudo apt install userinfo
 
 
 
