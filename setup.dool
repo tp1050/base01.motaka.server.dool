@@ -70,6 +70,12 @@ sudo apt install net-tools # this is for famous netstat
 sudo apt install idutils
 sudo apt install userinfo
 
+sudo nano /etc/ssh/sshd_config
+	port 22
+	port 8686
+	sudo ufw allow 22
+	sudo systemctl restart sshd
+
 
 
 
