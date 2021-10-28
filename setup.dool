@@ -76,7 +76,7 @@ sudo nano /etc/ssh/sshd_config
 	sudo ufw allow 22
 	sudo systemctl restart sshd
 
-
+sudo apt install libmysqlclient-dev
 
 
 
