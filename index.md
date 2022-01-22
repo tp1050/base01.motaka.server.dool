@@ -1,37 +1,37 @@
-## Welcome to GitHub Pages
+Challenges:
 
-You can use the [editor on GitHub](https://github.com/tp1050/base01.motaka.server.dool/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+1. Permanence:
+2. Write permission
+3. Reconnects 
+4. Authentication
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+Install ssh:
+`sudo apt install ssh sshfs`
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+generate SSH Keys:
 
-```markdown
-Syntax highlighted code block
+`mkdir $HOME/.ssh`
+`chmod 0700 $HOME/.ssh`
+`cd $HOME/.ssh`
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+`ssh-keygen -t rsa 4096`
 
-1. Numbered
-2. List
+copy the keys to the server
+`ssh-copy-id username@remotehost`
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+##Do not recommend it
+#Disable Password Authentication on the:
+#`sudo nano /etc/ssh/sshd_config`
+#change 
+#`PasswordAuthentication no`
 
-### Jekyll Themes
+`sudo systemctl restart ssh`
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/tp1050/base01.motaka.server.dool/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+##Challenges are how to get around default read_only
+#1) The mounted folder can only viewed using `su` and graphically must run graphical su equivalent
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+`sudo sshfs user@remote:/home/user/ /home/userc/1/2 -o reconnect -o idmap=user -o allow_other -o allow_root`
